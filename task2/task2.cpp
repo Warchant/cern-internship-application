@@ -32,8 +32,8 @@ void free_graph(int **G);
 int main()
 {
 	int ** G = generate_graph(N);			  // graph for parallel version
-	int ** Gseq = new int*[N];				  // and it's copy for single thread version
-	
+	int ** Gseq = new int*[N];			  // and it's copy for single thread version
+	// deep copy graph
 	for (int i = 0; i < N;i++)
 	{
 		Gseq[i] = new int[N];
@@ -44,8 +44,8 @@ int main()
 
 	std::chrono::time_point<std::chrono::system_clock> tstart, tend;
 
-	// PARALLEL VERSION
 	tstart = std::chrono::system_clock::now();
+	// PARALLEL VERSION
 	std::queue<std::thread*> threads;
 	int start = 0;
 	int step = N / N_THREADS;
@@ -112,7 +112,7 @@ inline int min(int a, int b)
 }
 
 
-void print(int ** G)
+void print_graph(int ** G)
 {
 	for (int i = 0; i < N; i++)
 	{
