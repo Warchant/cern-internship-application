@@ -1,0 +1,2 @@
+# clique-at-the-party
+Imagine a set P of people at a party. Say a subset C of P forms a celebrity clique if C is nonempty, everybody at the party knows every member of C , but members of C know only each other. Assuming there is such a clique at the party, your problem is to write an algorithm (function) for finding it in C++ language. As arguments for the function you are given a binary predicate knows and the set P as an array ps not containing duplicates.
